@@ -14,9 +14,10 @@ const Hero = () => {
     const { t, i18n } = useTranslation();
     const theme = useTheme();
 
+    const baseUrl = import.meta.env.BASE_URL;
     const mySlider= [
-    {text: "hero.MEN", link: "/image/banner-25.jpg"},
-    {text: "hero.WOMEN", link: "/image/banner-15.jpg"},
+{ text: "hero.MEN", link: `${baseUrl}image/banner-25.jpg` },
+        { text: "hero.WOMEN", link: `${baseUrl}image/banner-15.jpg` },
 ]
     return (
         <Container>
@@ -81,7 +82,7 @@ const Hero = () => {
 
             <Box sx={{position: 'relative'}}>
             
-                <img width={'100%'} src="/image/banner-17.jpg" alt="" />
+                <img width={'100%'} src={`${baseUrl}image/banner-17.jpg`} alt="" />
 
 <Stack  sx={{position: 'absolute', top: '50%', left: 33, transform : 'translateY(-50%)'}}>
 
@@ -96,7 +97,7 @@ const Hero = () => {
 </Box>
 
             <Box sx={{position: 'relative', mt: 2}}>
-                <img width={'100%'} src="/image/banner-16.jpg" alt="" />
+                <img width={'100%'} src={`${baseUrl}image/banner-16.jpg`} alt="" />
 
                 <Stack  sx={{position: 'absolute', top: '50%', left: 33, transform : 'translateY(-50%)'}}>
 
