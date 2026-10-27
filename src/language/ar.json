@@ -56,7 +56,8 @@
     "addToCart": "أضف للعربة"
   },
   "productDetails": {
-    "buyNow": "اشتري الان"
+    "buyNow": "اشتري الان",
+    "addedSuccessfully": "تم اضافة المنتج بنجاح"
   },
   "iconSection": {
     "fastDelivery": "سرعة التوصيل",
@@ -67,5 +68,33 @@
     "365DaysSub": "للاسترجاع بعد 365 يوم",
     "payment": "الدفع",
     "paymentSub": "الدفع السريع"
+  },
+  "shoppingCart": {
+    "Shopping Cart & Checkout": "عربة التسوق وإتمام الشراء",
+    "Your cart is empty. Start shopping now!": "عربة التسوق الخاصة بك فارغة. ابدأ التسوق الآن!",
+    "Cart Items": "عناصر عربة التسوق",
+    "Order Summary": "ملخص الطلب",
+    "Subtotal": "المجموع الفرعي",
+    "Shipping Fee": "رسوم الشحن",
+    "Use code `${mohamed}` for $30 off": "استخدم الرمز `${mohamed}` للحصول على خصم بقيمة 30 دولاراً",
+    "Payment Method": "طريقة الدفع",
+    "Cash on Delivery (COD)": "الدفع عند الاستلام",
+    "Credit / Debit Card": "بطاقة ائتمان / بطاقة خصم",
+    "Total Amount": "المبلغ الإجمالي",
+    "proceed to checkout": "الشروع في الخروج",
+    "Enter Coupon discount": "أدخل قسيمة الخصم",
+    "Apply": "تطبيق",
+    "Use code mohamed for $30 off": "استخدم الرمز mohamed للحصول على خصم بقيمة 30 دولاراً",
+    "Success! $30 discount applied with coupon mohamed": "تم بنجاح! تم تطبيق خصم بقيمة 30 دولاراً باستخدام القسيمة mohamed",
+    "Invalid coupon code. Try entering mohamed": "رمز القسيمة غير صالح. حاول إدخال mohamed",
+    "Checkout": "الدفع",
+    "details Poduct": "تفاصيل المنتج",
+    "Total": "المجموع",
+    "Your Cart IS Empty": "عربة التسوق الخاصة بك فارغة",
+    "Shopping Cart": "عربة التسوق"
+  },
+  "footer":{
+    "Designed and developed by": "تصميم وتطوير",
+    "mohamed atef": "محمد عاطف"
   }
 }

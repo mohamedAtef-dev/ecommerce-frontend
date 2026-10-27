@@ -1,13 +1,13 @@
-import { Box, Button, Stack, Typography } from "@mui/material";
+import { Alert, Box, Button, Snackbar, Stack, Typography } from "@mui/material";
 import AddShoppingCartOutlinedIcon from '@mui/icons-material/AddShoppingCartOutlined';
 import { useState } from "react";
 import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import { t } from "i18next";
-import { useDispatch } from 'react-redux'; // 👈 1. استيراد الـ useDispatch
+import { useDispatch } from 'react-redux'; 
 import { addToCart } from '../../Redux/cartSlice';
 
-import type { Product, ProductImage } from '../../Redux/cartSlice'; // 👈 استيراد الأنواع من الـ slice
+import type { Product, ProductImage } from '../../Redux/cartSlice'; 
 
 interface ProductDetailsProps {
   clickedProduct: Product | null;
@@ -18,6 +18,15 @@ const ProductDetails = ({clickedProduct} : ProductDetailsProps) => {
 
     const [selectedImg, setSelectedImg] = useState(0);
     const dispatch = useDispatch();
+
+    const [openSnackbar, setOpenSnackbar] = useState(false);
+
+    // Snackbar  دالة لإغلاق الـ  
+    const handleCloseSnackbar = () => {
+        setOpenSnackbar(false);
+    };
+
+
 
     return(
         <Box sx={{display: 'flex', alignItems: 'center', gap: 2.5, flexDirection: {xs: 'column', md: 'row'}}}>
@@ -66,16 +75,39 @@ const ProductDetails = ({clickedProduct} : ProductDetailsProps) => {
         </ToggleButtonGroup>
     </Stack>
 
-            <Button sx={{mb: {xs: 1, sm: 0},textTransform: 'capitalize'}} variant="contained"
-            onClick={() => {
+                <Button 
+                    sx={{ mb: { xs: 1, sm: 0 }, textTransform: 'capitalize' }} 
+                    variant="contained"
+                    onClick={() => {
                         if (clickedProduct) {
                             dispatch(addToCart(clickedProduct)); // إضافة المنتج للسلة
+                            setOpenSnackbar(true); // إظهار الـ Snackbar عند الضغط
                         }
-                    }}> 
-                <AddShoppingCartOutlinedIcon fontSize='small' sx={{mx: 1}} />
-                {t("productDetails.buyNow")}
-            </Button>
+                    }}
+                > 
+                    <AddShoppingCartOutlinedIcon fontSize='small' sx={{ mx: 1 }} />
+                    {t("productDetails.buyNow")}
+                </Button>
         </Box>
+
+        {/* مكون الـ Snackbar مع الـ Alert لعرض رسالة النجاح */}
+            <Snackbar 
+                open={openSnackbar} 
+                autoHideDuration={3000}
+                onClose={handleCloseSnackbar}
+                anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }} 
+            >
+                <Alert 
+                    onClose={handleCloseSnackbar} 
+                    severity="success" 
+                    variant="filled"
+                    sx={{ width: '100%'}}>
+                        
+                    {t("productDetails.addedSuccessfully") || "Product added to cart successfully!"}
+                </Alert>
+            </Snackbar>
+
+            
 
         </Box>
     );

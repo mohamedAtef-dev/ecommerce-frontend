@@ -1,9 +1,8 @@
-import { Badge, Container, IconButton, InputBase, Stack, Typography, type BadgeProps } from "@mui/material";
+import { Container, IconButton, InputBase, Stack, Typography} from "@mui/material";
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import { styled, useTheme } from '@mui/material/styles';
 import SearchIcon from '@mui/icons-material/Search';
 import Person2OutlinedIcon from '@mui/icons-material/Person2Outlined';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import List from '@mui/material/List';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
@@ -12,8 +11,7 @@ import Menu from '@mui/material/Menu';
 import { useState } from "react";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { useTranslation } from "react-i18next";
-import { useSelector } from 'react-redux';
-import type { RootState } from "../../Redux/store";
+import TemporaryDrawer from "./ShopingCart";
 
 const Search = styled('div')(({ theme }) => ({
   flexGrow: 0.4,
@@ -61,19 +59,8 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-const StyledBadge = styled(Badge)<BadgeProps>(({ theme }) => ({
-  '& .MuiBadge-badge': {
-    right: -3,
-    top: 13,
-    border: `2px solid ${theme.palette.background.paper}`,
-    padding: '0 4px',
-  },
-}));
-
 const Header2 = () => {
   const { t } = useTranslation();
-
-const cartProducts = useSelector((state: RootState) => state.cart.cartProducts);
 
   const options = [
     t("header2.All Categories"),
@@ -178,11 +165,8 @@ const cartProducts = useSelector((state: RootState) => state.cart.cartProducts);
       </Search>
 
       <Stack direction={"row"} sx={{ alignItems: 'center' }}>
-        <IconButton aria-label="cart">
-          <StyledBadge badgeContent={cartProducts.length} color="primary">
-            <ShoppingCartIcon />
-          </StyledBadge>
-        </IconButton>
+
+        <TemporaryDrawer />
 
         <IconButton>
           <Person2OutlinedIcon />

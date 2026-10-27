@@ -147,7 +147,6 @@ const Header3 = () => {
             <Close />
           </IconButton>
 
-          {/* تم تحديث المصفوقة لتتناسب مع المطلوب لكل رابط */}
           {[
             { mainLink: 'Home', subLink: ['About', 'Projects', 'Contact', 'Team'] },
             { mainLink: 'Pages', subLink: ['About', 'Contact'] },

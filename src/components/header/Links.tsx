@@ -7,6 +7,7 @@ import ListItemText from '@mui/material/ListItemText';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import { useTranslation } from "react-i18next";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 interface LinksProps {
     title: string;
@@ -14,8 +15,7 @@ interface LinksProps {
 
 const Links = ({ title }: LinksProps) => {
     const { t } = useTranslation();
-    
-    // حالة لتتبع فتح وإغلاق القائمة الفرعية الخاصة بـ Projects
+
     const [subOpen, setSubOpen] = useState(false);
 
     return (
@@ -26,9 +26,21 @@ const Links = ({ title }: LinksProps) => {
             ':hover .show-when-hover': { display: 'block' },
             ':hover': { cursor: 'pointer' },
         }}>
+            {title === "Home" ? (
+                <Typography 
+                    component={Link} 
+                    to="/" 
+                    variant="body1"
+                    sx={{ textDecoration: 'none', color: 'inherit' }}
+                >
+                    {t(`header3.${title}`)}
+                </Typography>
+            ) : (
             <Typography variant="body1">
                 {t(`header3.${title}`)}
             </Typography>
+            )}
+
 
             <ExpandMore sx={{ fontSize: '16px', ml: 1 }} />
 
@@ -54,7 +66,7 @@ const Links = ({ title }: LinksProps) => {
                                         </ListItemButton>
                                     </ListItem>
 
-                                    {/* 2. Projects ومعها القائمة الفرعية (تحكم كامل عبر الـ State) */}
+                                
                                     <ListItem 
                                         disablePadding 
                                         sx={{ display: 'flex', p: 0, px: 1, position: 'relative' }}
@@ -67,7 +79,7 @@ const Links = ({ title }: LinksProps) => {
                                             <KeyboardArrowRightOutlined fontSize="small"/>
                                         </ListItemButton>
 
-                                        {/* القائمة الفرعية تظهر بناءً على الـ State */}
+                                    
                                         {subOpen && (
                                             <Box sx={{ position: 'absolute', left: '100%', top: 0, zIndex: 30 }}>
                                                 <Paper sx={{ ml: 1, minWidth: 170, boxShadow: 3, borderRadius: '8px', overflow: 'hidden' }}>
@@ -110,7 +122,7 @@ const Links = ({ title }: LinksProps) => {
                                     </ListItem>
                                 </>
                             ) : (
-                                /* باقي الروابط */
+                                
                                 <>
                                     <ListItem disablePadding sx={{ display: 'flex', p: 0, px: 1 }}>
                                         <ListItemButton sx={{ borderRadius: '6px' }}>

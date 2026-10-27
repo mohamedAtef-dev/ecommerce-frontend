@@ -57,7 +57,8 @@
         "addToCart": "Add To Cart"
     },
     "productDetails": {
-        "buyNow": "Buy Now"
+        "buyNow": "Buy Now",
+        "addedSuccessfully": "addedSuccessfully"
     },
     "iconSection": {
         "fastDelivery": "Fast Delivery",
@@ -68,5 +69,33 @@
         "365DaysSub": "Returns within 365 days",
         "payment": "Payment",
         "paymentSub": "Fast Payment"
-    }
+    },
+  "shoppingCart": {
+    "Shopping Cart & Checkout": "Shopping Cart & Checkout",
+    "Your cart is empty. Start shopping now!": "Your cart is empty. Start shopping now!",
+    "Cart Items": "Cart Items",
+    "Order Summary": "Order Summary",
+    "Subtotal": "Subtotal",
+    "Shipping Fee": "Shipping Fee",
+    "Use code `${mohamed}` for $30 off": "Use code `${mohamed}` for $30 off",
+    "Payment Method": "Payment Method",
+    "Cash on Delivery (COD)": "Cash on Delivery (COD)",
+    "Credit / Debit Card": "Credit / Debit Card",
+    "Total Amount": "Total Amount",
+    "proceed to checkout": "proceed to checkout",
+    "Enter Coupon discount": "Enter Coupon discount",
+    "Apply": "Apply",
+    "Use code mohamed for $30 off": "Use code mohamed for $30 off",
+    "Success! $30 discount applied with coupon mohamed": "Success! $30 discount applied with coupon mohamed",
+    "Invalid coupon code. Try entering mohamed": "Invalid coupon code. Try entering mohamed",
+    "Checkout": "Checkout",
+    "details Poduct": "details Poduct",
+    "Total": "Total",
+    "Your Cart IS Empty": "Your Cart IS Empty",
+    "Shopping Cart": "Shopping Cart"
+  },
+    "footer":{
+    "Designed and developed by": "Designed and developed by",
+    "mohamed atef": "mohamed atef"
+  }
 }

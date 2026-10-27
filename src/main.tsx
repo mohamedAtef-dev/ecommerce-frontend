@@ -8,7 +8,7 @@ import './i18n';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-        <Provider store={store}>
+    <Provider store={store}>
       <App />
     </Provider>,
     
